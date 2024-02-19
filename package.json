@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "setup-project": "npm i && cd client && npm i",
+    "setup-project-production": "npm i && cd client && npm i && npm run build",
     "dev": "node --watch server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

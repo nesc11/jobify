@@ -32,7 +32,7 @@ app.use(express.json())
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
-app.use(express.static(path.resolve(__dirname, './public')))
+app.use(express.static(path.resolve(__dirname, './client/dist')))
 app.use(cookieParser())
 
 // API routes
@@ -41,7 +41,7 @@ app.use('/api/v1/jobs', authMiddleware, jobsRouter)
 app.use('/api/v1/users', authMiddleware, usersRouter)
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public', 'index.html'))
+    res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'))
 })
 
 
